@@ -1,4 +1,4 @@
-module.exports = async function (Homework) {
+module.exports = function (Homework) {
   const {
     add,
     less
@@ -17,7 +17,7 @@ module.exports = async function (Homework) {
     }
   }
 
-  return (array, fn, initialValue, cb) => {
+  return async (array, fn, initialValue, cb) => {
     const asyncAddPromise = promisify(add);
     const asyncLessPromise = promisify(less);
     const asyncElementPromise = promisify(array.get);
